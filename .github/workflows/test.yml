@@ -1,0 +1,24 @@
+name: Conditional Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      test:
+        description: '(y/n)?'
+        required: true
+        default: 'y'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Y branch
+        if: ${{ github.event.inputs.test == 'y' }}"
+        run: echo "Test = Y"
+
+      - name: N branch
+        if: ${{ github.event.inputs.test == 'n' }}"
+        run: echo "Test = N"
