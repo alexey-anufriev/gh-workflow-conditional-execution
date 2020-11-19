@@ -16,3 +16,8 @@ if: github.event.inputs.test == 'y'
 ```
 
 ## PR name as condition for workfllow steps execution
+
+Condition:
+```
+if: startsWith(github.event.pull_request.title, '[urgent]')
+```
