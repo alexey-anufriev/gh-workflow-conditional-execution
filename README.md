@@ -14,3 +14,5 @@ Condition:
 ```
 if: github.event.inputs.test == 'y'
 ```
+
+## PR name as condition for workfllow steps execution
