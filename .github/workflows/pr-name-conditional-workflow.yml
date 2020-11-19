@@ -17,5 +17,9 @@ jobs:
         if: startsWith(github.event.pull_request.title, '[urgent]')
         run: echo Conditional step executed
 
+      - name: Conditional (inversed) step
+        if: startsWith(github.event.pull_request.title, '[urgent]') != true
+        run: echo Conditional (inversed) step executed
+
       - name: Non-conditional step
         run: echo Non-conditional step executed
