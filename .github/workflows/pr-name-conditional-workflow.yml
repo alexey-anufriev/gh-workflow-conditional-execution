@@ -1,0 +1,21 @@
+name: Condition on PR Name
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Conditional step
+        if: startsWith(github.event.pull_request.title, '[urgent]')
+        run: echo Conditional step executed
+
+      - name: Non-conditional step
+        run: echo Non-conditional step executed
