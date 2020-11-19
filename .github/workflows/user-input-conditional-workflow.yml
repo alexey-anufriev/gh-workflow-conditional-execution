@@ -1,4 +1,4 @@
-name: Conditional Workflow
+name: Condition on User Input
 
 on:
   workflow_dispatch:
