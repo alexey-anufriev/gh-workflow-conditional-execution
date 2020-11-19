@@ -21,3 +21,7 @@ Condition:
 ```
 if: startsWith(github.event.pull_request.title, '[urgent]')
 ```
+or
+```
+if: startsWith(github.event.pull_request.title, '[urgent]') != true
+```
